@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StartGameButtonUI : MonoBehaviour
+public class LoadNextSceneButton : MonoBehaviour
 {
     [SerializeField] private Loader.Scene _concreteScene;
-    [SerializeField] private Button _startGameButton;
+    [SerializeField] private Button _loadNextSceneButton;
     private void LoadGame()
     {
         Loader.Load(_concreteScene);
@@ -14,9 +14,9 @@ public class StartGameButtonUI : MonoBehaviour
 
     private void OnEnable()
     {
-        if (_startGameButton != null)
+        if (_loadNextSceneButton != null)
         {
-            _startGameButton.onClick.AddListener(LoadGame);
+            _loadNextSceneButton.onClick.AddListener(LoadGame);
         }
         else
         {
@@ -26,9 +26,9 @@ public class StartGameButtonUI : MonoBehaviour
 
     private void OnDisable()
     {
-        if (_startGameButton != null)
+        if (_loadNextSceneButton != null)
         {
-            _startGameButton.onClick.RemoveListener(LoadGame);
+            _loadNextSceneButton.onClick.RemoveListener(LoadGame);
         }
     }
 
