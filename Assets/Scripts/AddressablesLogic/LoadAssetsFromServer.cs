@@ -1,64 +1,58 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.UI;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceProviders;
+using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class LoadAssetsFromServer : MonoBehaviour
 {
-    [SerializeField] private Button _loadClickGameAssetsButtn;
-    [SerializeField] private Button _loadRunnerGameAssetsButtn;
-    [SerializeField] private Button _unloadClickGameAssetsButtn;
-    [SerializeField] private Button _unloadRunnerGameAssetsButtn;
+    [SerializeField] private Button _loadClickGameAssetsButton;
+    [SerializeField] private Button _loadRunnerGameAssetsButton;
 
-    private string _scene1URL = "https://github.com/ToxToxx/2GameLaucnher/main/ClickGame1.unity";
-    private string _scene2URL = "https://github.com/ToxToxx/2GameLaucnher/main/RunGame2.unity";
+    private string _scene1Address = "clickgamepackedassets_scenes_all_18adbe70653bfdf222ed6a2188404f33.bundle";
+    private string _scene2Address = "runnergamepackedassets_scenes_all_e5fb86d1632af0f0c9e89f935b224b79.bundle";
 
-    private GameObject _scene1;
-    private GameObject _scene2;
+    private AsyncOperationHandle<SceneInstance> _currentSceneHandle;
 
     void Start()
     {
-        _loadClickGameAssetsButtn.onClick.AddListener(() => StartCoroutine(LoadScene(_scene1URL, 1)));
-        _loadRunnerGameAssetsButtn.onClick.AddListener(() => StartCoroutine(LoadScene(_scene2URL, 2)));
-        _unloadClickGameAssetsButtn.onClick.AddListener(() => UnloadScene(1));
-        _unloadRunnerGameAssetsButtn.onClick.AddListener(() => UnloadScene(2));
+        _loadClickGameAssetsButton.onClick.AddListener(LoadClickGame);
+        _loadRunnerGameAssetsButton.onClick.AddListener(LoadRunnerGame);
     }
 
-    IEnumerator LoadScene(string url, int sceneNumber)
+    void LoadClickGame()
     {
-        UnityWebRequest request = UnityWebRequestAssetBundle.GetAssetBundle(url);
-        yield return request.SendWebRequest();
+        UnloadCurrentScene();
 
-        if (request.result == UnityWebRequest.Result.Success)
+        Addressables.LoadSceneAsync(_scene1Address, LoadSceneMode.Single).Completed += SceneLoadedCallback;
+    }
+
+    void LoadRunnerGame()
+    {
+        UnloadCurrentScene();
+
+        Addressables.LoadSceneAsync(_scene2Address, LoadSceneMode.Single).Completed += SceneLoadedCallback;
+    }
+
+    void SceneLoadedCallback(AsyncOperationHandle<SceneInstance> handle)
+    {
+        if (handle.Status == AsyncOperationStatus.Succeeded)
         {
-            AssetBundle bundle = DownloadHandlerAssetBundle.GetContent(request);
-            string scenePath = bundle.GetAllScenePaths()[0];
-            if (sceneNumber == 1)
-            {
-                _scene1 = Instantiate(bundle.LoadAsset<GameObject>("Scene1"));
-            }
-            else if (sceneNumber == 2)
-            {
-                _scene2 = Instantiate(bundle.LoadAsset<GameObject>("Scene2"));
-            }
-            bundle.Unload(false);
+            _currentSceneHandle = handle;
         }
         else
         {
-            Debug.LogError("Failed to load scene from URL: " + url);
+            Debug.LogError("Failed to load scene: " + handle.DebugName);
         }
     }
 
-    void UnloadScene(int sceneNumber)
+    void UnloadCurrentScene()
     {
-        if (sceneNumber == 1 && _scene1 != null)
+        if (_currentSceneHandle.IsValid())
         {
-            Destroy(_scene1);
-        }
-        else if (sceneNumber == 2 && _scene2 != null)
-        {
-            Destroy(_scene2);
+            Addressables.UnloadSceneAsync(_currentSceneHandle);
         }
     }
 }

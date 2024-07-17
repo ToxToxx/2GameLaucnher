@@ -15,9 +15,9 @@ MonoBehaviour:
   m_DefaultGroup: 33f0da0a6bfa2a644b8d51cf1e4f5ba0
   m_currentHash:
     serializedVersion: 2
-    Hash: e61501923ab28f0c1d142ee073e26345
+    Hash: ade9b61d9df3dfe328c68e0dc2921660
   m_OptimizeCatalogSize: 0
-  m_BuildRemoteCatalog: 0
+  m_BuildRemoteCatalog: 1
   m_BundleLocalCatalog: 0
   m_CatalogRequestsTimeout: 0
   m_DisableCatalogUpdateOnStart: 0
@@ -35,10 +35,10 @@ MonoBehaviour:
   m_CheckForContentUpdateRestrictionsOption: 0
   m_MonoScriptBundleCustomNaming: 
   m_RemoteCatalogBuildPath:
-    m_Id: 
+    m_Id: 90ddb24ac117a594987c04a08628dd75
   m_RemoteCatalogLoadPath:
-    m_Id: 
-  m_ContentStateBuildPathProfileVariableName: <default settings path>
+    m_Id: 9cd406a2297f28247a4962c51034b146
+  m_ContentStateBuildPathProfileVariableName: BuildTarget
   m_CustomContentStateBuildPath: 
   m_ContentStateBuildPath: 
   m_BuildAddressablesWithPlayerBuild: 0
@@ -66,9 +66,23 @@ MonoBehaviour:
       - m_Id: b2dbc4e4d23337a449404d6b890a8ae6
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
       - m_Id: 90ddb24ac117a594987c04a08628dd75
+        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+      - m_Id: 9cd406a2297f28247a4962c51034b146
+        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+    - m_InheritedParent: 
+      m_Id: 32ac953fb65a24b4085d75589690f271
+      m_ProfileName: RemoteProfile
+      m_Values:
+      - m_Id: 5499b8a5eb789044197be0c6d596ffe6
+        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
+      - m_Id: 02b6441fe00423d4b8a6f2f021bdbbc6
+        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+      - m_Id: b2dbc4e4d23337a449404d6b890a8ae6
+        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+      - m_Id: 90ddb24ac117a594987c04a08628dd75
         m_Value: ServerData/[BuildTarget]
       - m_Id: 9cd406a2297f28247a4962c51034b146
-        m_Value: http://[PrivateIpAddress]:[HostingServicePort]
+        m_Value: https://storage.yandexcloud.net/unitytestzadanie/StandaloneWindows64/[BuildTarget]
     m_ProfileEntryNames:
     - m_Id: 5499b8a5eb789044197be0c6d596ffe6
       m_Name: BuildTarget
@@ -90,6 +104,7 @@ MonoBehaviour:
     m_LabelNames:
     - default
     - clickGame
+    - runGame
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 02ec595c49bb76446827891d685af405, type: 2}
@@ -103,7 +118,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: deacec23b255e704bb4ca690ef4e1e17, type: 2}
   - {fileID: 11400000, guid: be5bbea7475203045b4d756c60f4f5c8, type: 2}
   - {fileID: 11400000, guid: 3e3564e99ad25d14484fe2a3951c87f1, type: 2}
-  m_ActiveProfileId: b86e7d7f3a5c1504a98520b194e8c827
+  m_ActiveProfileId: 32ac953fb65a24b4085d75589690f271
   m_HostingServicesManager:
     m_HostingServiceInfos: []
     m_Settings: {fileID: 11400000}

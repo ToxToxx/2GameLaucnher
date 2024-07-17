@@ -152,12 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28c487744f20e5d4f8d44a1a817332e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadClickGameAssetsButtn: {fileID: 489455003}
-  _loadRunnerGameAssetsButtn: {fileID: 57990833}
-  _unloadClickGameAssetsButtn: {fileID: 1382911988}
-  _unloadRunnerGameAssetsButtn: {fileID: 1703113768}
-  scene1Url: https://github.com/ToxToxx/2GameLaucnher/main/ClickGame1.unity
-  scene2Url: https://github.com/ToxToxx/2GameLaucnher/main/RunGame2.unity
+  _loadClickGameAssetsButton: {fileID: 489455003}
+  _unloadClickGameAssetsButton: {fileID: 1382911988}
+  _loadRunnerGameAssetsButton: {fileID: 57990833}
+  _unloadRunnerGameAssetsButton: {fileID: 1703113768}
 --- !u!4 &36446461
 Transform:
   m_ObjectHideFlags: 0
