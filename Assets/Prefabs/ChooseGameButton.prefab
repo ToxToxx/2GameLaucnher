@@ -268,6 +268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b69a899649f3e3944b8546b60110f974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chooseGameButton: {fileID: 845445992646507963}
-  _mainMenuUI: {fileID: 0}
-  _preGameScreenUI: {fileID: 0}
+  _switchScreenButton: {fileID: 845445992646507963}
+  _screenToHide: {fileID: 0}
+  _screenToShow: {fileID: 0}
