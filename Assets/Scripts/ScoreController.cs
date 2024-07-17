@@ -25,7 +25,7 @@ public class ScoreController : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        PlayerPrefs.SetInt("ClickCount", _clickCountScore);
+        PlayerPrefs.SetInt(CLICK_COUNT_SCORE, _clickCountScore);
     }
 
     public int GetClickScore()
