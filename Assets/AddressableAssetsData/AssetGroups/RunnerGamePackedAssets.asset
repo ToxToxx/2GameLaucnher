@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: RunnerGamePackedAssets
+  m_EditorClassIdentifier: 
+  m_GroupName: RunnerGamePackedAssets
+  m_Data:
+    m_SerializedData: []
+  m_GUID: d9c253079f0011143a8b20e4ba7a8ffe
+  m_SerializeEntries:
+  - m_GUID: 311cd192750a2e4478b9f93ebb60c6bb
+    m_Address: Assets/Scenes/RunGame2.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: d02a4d1fd7d31534c918ab9f61c35b0d, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: dc32443ca0c514843bfa85b8cccb51af, type: 2}
+    - {fileID: 11400000, guid: c32223f234b50fb4d94947e900f451ce, type: 2}

@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GAME 1
+  m_text: GAME 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 1657209718682874058}
   - component: {fileID: 2464483030989133774}
   - component: {fileID: 845445992646507963}
-  - component: {fileID: 4428670031561898068}
+  - component: {fileID: 4889795314376921445}
   m_Layer: 5
   m_Name: ChooseGameButton
   m_TagString: Untagged
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4428670031561898068
+--- !u!114 &4889795314376921445
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -265,9 +265,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6906069273438613246}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b69a899649f3e3944b8546b60110f974, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b70352c4a2fc754b8c2c84208f46e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _switchScreenButton: {fileID: 845445992646507963}
-  _screenToHide: {fileID: 0}
-  _screenToShow: {fileID: 0}
+  _concreteScene: 3
+  _loadNextSceneButton: {fileID: 0}
