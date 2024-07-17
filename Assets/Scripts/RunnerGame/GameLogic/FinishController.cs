@@ -10,7 +10,7 @@ namespace RunnerGame
         {
             if (other.gameObject.GetComponent<PlayerMovementController>())
             {
-                Time.timeScale = 0f;
+                TimeController.Instance.StopTimer();         
                 _finishScreenCanvas.gameObject.SetActive(true);
             }
             
