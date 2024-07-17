@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Loader : MonoBehaviour
+public static class Loader
 {
-    // Start is called before the first frame update
-    void Start()
+    public enum Scene
     {
-        
+        Launcher,
+        LoadingScreen,
+        ClickGame1,
+        RunGame2,
     }
 
-    // Update is called once per frame
-    void Update()
+    private static Scene _targetScene;
+
+    public static void Load(Scene targetScene)
     {
-        
+        _targetScene = targetScene;
+        SceneManager.LoadScene(Scene.LoadingScreen.ToString());
+    }
+
+    public static void LoaderCallback()
+    {
+        SceneManager.LoadScene(_targetScene.ToString());
     }
 }
