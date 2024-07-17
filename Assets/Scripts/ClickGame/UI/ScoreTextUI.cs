@@ -1,15 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ScoreTextUI : MonoBehaviour
+namespace ClickGame
 {
-    [SerializeField] private TextMeshProUGUI _clickScoreText;
-    [SerializeField] private ScoreController _scoreController;
-
-    private void Update()
+    public class ScoreTextUI : MonoBehaviour
     {
-        _clickScoreText.text = _scoreController.GetClickScore().ToString();
+        [SerializeField] private TextMeshProUGUI _clickScoreText;
+        [SerializeField] private ScoreController _scoreController;
+
+        private void Update()
+        {
+            _clickScoreText.text = _scoreController.GetClickScore().ToString();
+        }
     }
+
 }
