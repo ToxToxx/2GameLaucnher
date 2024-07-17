@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ClickGame1.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/RunGame2.unity
+    guid: 311cd192750a2e4478b9f93ebb60c6bb
+  - enabled: 1
+    path: Assets/Scenes/Launcher.unity
+    guid: ac39e540cc334904f976fd0b2a23975e
+  - enabled: 1
+    path: Assets/Scenes/LoadingScreen.unity
+    guid: 0b2d3d4bd77491846a21c085849068e0
   m_configObjects: {}
