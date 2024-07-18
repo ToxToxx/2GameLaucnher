@@ -17,15 +17,11 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: d9c253079f0011143a8b20e4ba7a8ffe
   m_SerializeEntries:
-  - m_GUID: 6cc7a3ac438bd1a4aa0e4410aa144dad
-    m_Address: Assets/Scripts/RunnerGame
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 311cd192750a2e4478b9f93ebb60c6bb
     m_Address: Assets/Scenes/RunGame2.unity
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - runGame
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d02a4d1fd7d31534c918ab9f61c35b0d, type: 2}

@@ -17,15 +17,11 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 839f778bf6bddcb438eeac13a837dc28
   m_SerializeEntries:
-  - m_GUID: 9eff60c5a05b74c4ebef861109032fa7
-    m_Address: Assets/Scripts/ClickGame
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 99c9720ab356a0642a771bea13969a05
     m_Address: Assets/Scenes/ClickGame1.unity
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - clickGame
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d02a4d1fd7d31534c918ab9f61c35b0d, type: 2}
