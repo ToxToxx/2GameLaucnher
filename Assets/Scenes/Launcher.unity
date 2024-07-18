@@ -167,11 +167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28c487744f20e5d4f8d44a1a817332e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadButton1: {fileID: 489455003}
-  loadButton2: {fileID: 57990833}
-  unloadButton1: {fileID: 1382911988}
-  unloadButton2: {fileID: 1703113768}
-  statusText: {fileID: 1809905252}
+  _loadButton1: {fileID: 489455003}
+  _loadButton2: {fileID: 57990833}
+  _unloadButton1: {fileID: 1382911988}
+  _unloadButton2: {fileID: 1703113768}
+  _statusText: {fileID: 1809905252}
 --- !u!1 &57990830
 GameObject:
   m_ObjectHideFlags: 0

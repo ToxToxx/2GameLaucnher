@@ -6,40 +6,47 @@ using TMPro;
 
 public class AssetManager : MonoBehaviour
 {
-    // URL до вашего сервера с ассетами (замените на ваш URL)
-    private string assetBundleURL1 = "https://storage.yandexcloud.net/unitytestzadanie/clickgamepackedassets_scenes_all_18adbe70653bfdf222ed6a2188404f33.bundle";
-    private string assetBundleURL2 = "https://storage.yandexcloud.net/unitytestzadanie/runnergamepackedassets_scenes_all_e5fb86d1632af0f0c9e89f935b224b79.bundle";
+    // URL сервера
+    private string _assetBundleURL1 = "https://storage.yandexcloud.net/unitytestzadanie/clickgamepackedassets_scenes_all_18adbe70653bfdf222ed6a2188404f33.bundle";
+    private string _assetBundleURL2 = "https://storage.yandexcloud.net/unitytestzadanie/runnergamepackedassets_scenes_all_e5fb86d1632af0f0c9e89f935b224b79.bundle";
 
     // Кэшированные AssetBundles
     private AssetBundle assetBundle1;
     private AssetBundle assetBundle2;
 
     // UI элементы
-    public Button loadButton1;
-    public Button loadButton2;
-    public Button unloadButton1;
-    public Button unloadButton2;
-    public TextMeshProUGUI statusText;
+    [SerializeField] private Button _loadButton1;
+    [SerializeField] private Button _loadButton2;
+    [SerializeField] private Button _unloadButton1;
+    [SerializeField] private Button _unloadButton2;
+    [SerializeField] private TextMeshProUGUI _statusText;
 
     void Start()
     {
         // Добавляем слушатели к кнопкам
-        loadButton1.onClick.AddListener(() => LoadAssetBundle(1));
-        loadButton2.onClick.AddListener(() => LoadAssetBundle(2));
-        unloadButton1.onClick.AddListener(() => UnloadAssetBundle(1));
-        unloadButton2.onClick.AddListener(() => UnloadAssetBundle(2));
+        _loadButton1.onClick.AddListener(() => LoadAssetBundle(1));
+        _loadButton2.onClick.AddListener(() => LoadAssetBundle(2));
+        _unloadButton1.onClick.AddListener(() => UnloadAssetBundle(1));
+        _unloadButton2.onClick.AddListener(() => UnloadAssetBundle(2));
     }
 
     // Метод для загрузки ассета
     public void LoadAssetBundle(int gameNumber)
     {
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            _statusText.text = "No internet connection. Please check your connection and try again.";
+            Debug.LogError("No internet connection.");
+            return;
+        }
+
         if (gameNumber == 1)
         {
-            StartCoroutine(DownloadAssetBundle(assetBundleURL1, 1));
+            StartCoroutine(DownloadAssetBundle(_assetBundleURL1, 1));
         }
         else if (gameNumber == 2)
         {
-            StartCoroutine(DownloadAssetBundle(assetBundleURL2, 2));
+            StartCoroutine(DownloadAssetBundle(_assetBundleURL2, 2));
         }
     }
 
@@ -50,14 +57,14 @@ public class AssetManager : MonoBehaviour
         {
             assetBundle1.Unload(true);
             assetBundle1 = null;
-            statusText.text = "AssetBundle 1 выгружен";
+            _statusText.text = "AssetBundle 1 выгружен";
             Debug.Log("AssetBundle 1 выгружен");
         }
         else if (gameNumber == 2 && assetBundle2 != null)
         {
             assetBundle2.Unload(true);
             assetBundle2 = null;
-            statusText.text = "AssetBundle 2 выгружен";
+            _statusText.text = "AssetBundle 2 выгружен";
             Debug.Log("AssetBundle 2 выгружен");
         }
     }
@@ -70,7 +77,7 @@ public class AssetManager : MonoBehaviour
 
         if (request.result != UnityWebRequest.Result.Success)
         {
-            statusText.text = "Ошибка загрузки AssetBundle " + gameNumber;
+            _statusText.text = "Ошибка загрузки AssetBundle " + gameNumber;
             Debug.LogError("Ошибка загрузки: " + request.error);
         }
         else
@@ -79,12 +86,12 @@ public class AssetManager : MonoBehaviour
             if (gameNumber == 1)
             {
                 assetBundle1 = bundle;
-                statusText.text = "AssetBundle 1 загружен";
+                _statusText.text = "AssetBundle 1 загружен";
             }
             else if (gameNumber == 2)
             {
                 assetBundle2 = bundle;
-                statusText.text = "AssetBundle 2 загружен";
+                _statusText.text = "AssetBundle 2 загружен";
             }
             Debug.Log("AssetBundle " + gameNumber + " загружен");
         }
