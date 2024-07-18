@@ -1,8 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
 namespace ClickGame
 {
+    /// <summary>
+    /// Контроллер, управляющий очками игрока - т.к. игра небольшая, то одного контроллера хватит на то, чтобы добавлять счёт и загружать его
+    /// </summary>
     public class ScoreController : MonoBehaviour
     {
         private const string CLICK_COUNT_SCORE = "ClickCountScore";

@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace RunnerGame
 {
+    /// <summary>
+    /// скрипт движения игрока, считывает с инпут менеджера вектор и двигает игрока
+    /// </summary>
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerMovementController : MonoBehaviour
     {

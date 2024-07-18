@@ -4,6 +4,9 @@ using UnityEngine.Networking;
 using System.Collections;
 using TMPro;
 
+/// <summary>
+/// Здесь происходит загрузка и выгрузка бандлов адрессаблс в данном случае - сцен с игрой
+/// </summary>
 public class AssetManager : MonoBehaviour
 {
     // URL сервера

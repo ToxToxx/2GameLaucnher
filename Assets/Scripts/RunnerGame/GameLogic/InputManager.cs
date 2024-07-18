@@ -3,6 +3,9 @@ using UnityEngine.InputSystem;
 
 namespace RunnerGame
 {
+    /// <summary>
+    /// класс отвечающий за инпут игрока, он берёт с инпут системы значения и то, какие кнопки мы нажали, а другие классы могут обращаться к этим значениям через менеджера
+    /// </summary>
     [RequireComponent(typeof(PlayerInput))]
     public class InputManager : MonoBehaviour
     {

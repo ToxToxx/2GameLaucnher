@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace ClickGame
 {
+    /// <summary>
+    /// вывод количества очков пользователю текстово
+    /// </summary>
     public class ScoreTextUI : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _clickScoreText;

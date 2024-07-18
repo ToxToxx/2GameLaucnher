@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// контроллер времени, сохраняет и фиксирует время, за которое игрок прошёл
+/// </summary>
+
 public class TimeController : MonoBehaviour
 {
     public static TimeController Instance;
@@ -41,7 +45,7 @@ public class TimeController : MonoBehaviour
         {
             Time.timeScale = 0f;
             _bestTime = _currentTime;
-            PlayerPrefs.SetFloat("BestTime", _bestTime);      
+            PlayerPrefs.SetFloat("BestTime", _bestTime);
         }
     }
 
@@ -54,9 +58,10 @@ public class TimeController : MonoBehaviour
     public float GetCurrentTime()
     {
         return _currentTime;
-    } 
+    }
     public float GetBestTime()
     {
         return _bestTime;
     }
 }
+

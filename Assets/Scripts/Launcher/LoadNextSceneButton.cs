@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class LoadNextSceneButton : MonoBehaviour
 {
+    /// <summary>
+    /// —крипт, позвол€ющий отправитьс€ на другую сцену - сделан во многом дл€ того, чтобы вернутьс€ в главное меню
+    /// </summary>
     [SerializeField] private Loader.Scene _concreteScene;
     [SerializeField] private Button _loadNextSceneButton;
     private void LoadGame()
@@ -20,7 +23,7 @@ public class LoadNextSceneButton : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No game is existing");
+            Debug.LogError("No scene is existing");
         }
     }
 

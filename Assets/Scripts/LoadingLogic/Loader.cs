@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// класс хранящий сцены в проекте и их загрузку
+/// </summary>
 public static class Loader
 {
     public enum Scene

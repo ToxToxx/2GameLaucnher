@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace RunnerGame
 {
+    /// <summary>
+    /// Класс отвечающий за логику поведения объекта финиша - точки назначения нашего героя. Останавливает время и показывает экран победы.
+    /// </summary>
     public class FinishController : MonoBehaviour
     {
         [SerializeField] private Canvas _finishScreenCanvas;
