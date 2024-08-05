@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class LoadNextSceneButton : MonoBehaviour
 {
     /// <summary>
-    /// —крипт, позвол€ющий отправитьс€ на другую сцену - сделан во многом дл€ того, чтобы вернутьс€ в главное меню
+    /// Script that allows navigation to another scene - mainly used for returning to the main menu.
     /// </summary>
     [SerializeField] private Loader.Scene _concreteScene;
     [SerializeField] private Button _loadNextSceneButton;
+
     private void LoadGame()
     {
         Loader.Load(_concreteScene);
@@ -23,7 +24,7 @@ public class LoadNextSceneButton : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No scene is existing");
+            Debug.LogError("No button assigned for scene loading.");
         }
     }
 
@@ -34,5 +35,4 @@ public class LoadNextSceneButton : MonoBehaviour
             _loadNextSceneButton.onClick.RemoveListener(LoadGame);
         }
     }
-
 }

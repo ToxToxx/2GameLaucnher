@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ClickGame
 {
     /// <summary>
-    /// вывод количества очков пользователю текстово
+    /// Displays the player's score as text.
     /// </summary>
     public class ScoreTextUI : MonoBehaviour
     {
@@ -16,5 +16,4 @@ namespace ClickGame
             _clickScoreText.text = _scoreController.GetClickScore().ToString();
         }
     }
-
 }

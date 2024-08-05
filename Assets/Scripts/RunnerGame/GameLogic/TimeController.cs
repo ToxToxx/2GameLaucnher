@@ -1,9 +1,8 @@
 using UnityEngine;
 
 /// <summary>
-/// контроллер времени, сохраняет и фиксирует время, за которое игрок прошёл
+/// Time controller that tracks and records the time taken by the player.
 /// </summary>
-
 public class TimeController : MonoBehaviour
 {
     public static TimeController Instance;

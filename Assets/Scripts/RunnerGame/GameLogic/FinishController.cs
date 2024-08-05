@@ -3,7 +3,7 @@ using UnityEngine;
 namespace RunnerGame
 {
     /// <summary>
-    /// Класс отвечающий за логику поведения объекта финиша - точки назначения нашего героя. Останавливает время и показывает экран победы.
+    /// Class responsible for the behavior logic of the finish object - the destination point for our hero. Stops time and displays the victory screen.
     /// </summary>
     public class FinishController : MonoBehaviour
     {

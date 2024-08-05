@@ -3,7 +3,7 @@ using UnityEngine;
 namespace RunnerGame
 {
     /// <summary>
-    /// скрипт движения игрока, считывает с инпут менеджера вектор и двигает игрока
+    /// Player movement script. Reads the vector from the input manager and moves the player.
     /// </summary>
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerMovementController : MonoBehaviour
