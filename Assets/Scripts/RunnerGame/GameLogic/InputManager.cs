@@ -18,6 +18,7 @@ namespace RunnerGame
         //Получаем компоненты отвечающие за движение
         private void Awake()
         {
+            PlayerInput
             PlayerInput = GetComponent<PlayerInput>();
             _moveAction = PlayerInput.actions["Move"];
         }

@@ -14,8 +14,8 @@ public class AssetManager : MonoBehaviour
     private string _assetBundleURL2 = "https://storage.yandexcloud.net/unitytestzadanie/runnergamepackedassets_scenes_all_e5fb86d1632af0f0c9e89f935b224b79.bundle";
 
     // Кэшированные AssetBundles
-    private AssetBundle assetBundle1;
-    private AssetBundle assetBundle2;
+    private AssetBundle _assetBundle1;
+    private AssetBundle _assetBundle2;
 
     // UI элементы
     [SerializeField] private Button _loadButton1;
@@ -34,7 +34,7 @@ public class AssetManager : MonoBehaviour
     }
 
     // Метод для загрузки ассета
-    public void LoadAssetBundle(int gameNumber)
+    private void LoadAssetBundle(int gameNumber)
     {
         if (Application.internetReachability == NetworkReachability.NotReachable)
         {
@@ -54,19 +54,19 @@ public class AssetManager : MonoBehaviour
     }
 
     // Метод для выгрузки ассета
-    public void UnloadAssetBundle(int gameNumber)
+    private void UnloadAssetBundle(int gameNumber)
     {
-        if (gameNumber == 1 && assetBundle1 != null)
+        if (gameNumber == 1 && _assetBundle1 != null)
         {
-            assetBundle1.Unload(true);
-            assetBundle1 = null;
+            _assetBundle1.Unload(true);
+            _assetBundle1 = null;
             _statusText.text = "AssetBundle 1 выгружен";
             Debug.Log("AssetBundle 1 выгружен");
         }
-        else if (gameNumber == 2 && assetBundle2 != null)
+        else if (gameNumber == 2 && _assetBundle2 != null)
         {
-            assetBundle2.Unload(true);
-            assetBundle2 = null;
+            _assetBundle2.Unload(true);
+            _assetBundle2 = null;
             _statusText.text = "AssetBundle 2 выгружен";
             Debug.Log("AssetBundle 2 выгружен");
         }
@@ -88,12 +88,12 @@ public class AssetManager : MonoBehaviour
             AssetBundle bundle = DownloadHandlerAssetBundle.GetContent(request);
             if (gameNumber == 1)
             {
-                assetBundle1 = bundle;
+                _assetBundle1 = bundle;
                 _statusText.text = "AssetBundle 1 загружен";
             }
             else if (gameNumber == 2)
             {
-                assetBundle2 = bundle;
+                _assetBundle2 = bundle;
                 _statusText.text = "AssetBundle 2 загружен";
             }
             Debug.Log("AssetBundle " + gameNumber + " загружен");
