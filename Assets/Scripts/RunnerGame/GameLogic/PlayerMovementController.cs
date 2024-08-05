@@ -18,7 +18,7 @@ namespace RunnerGame
 
         private void FixedUpdate()
         {
-            Vector2 movement = InputManager.Movement;
+            Vector2 movement = InputManager.Instance.Movement;
 
             Vector3 moveDirection = new(movement.x, 0, movement.y);
 

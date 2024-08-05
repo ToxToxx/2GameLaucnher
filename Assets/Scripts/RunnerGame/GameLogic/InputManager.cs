@@ -4,30 +4,57 @@ using UnityEngine.InputSystem;
 namespace RunnerGame
 {
     /// <summary>
-    /// класс отвечающий за инпут игрока, он берёт с инпут системы значения и то, какие кнопки мы нажали, а другие классы могут обращаться к этим значениям через менеджера
+    /// The class responsible for player input, it gets values from the input system and the buttons we pressed, and other classes can access these values through the manager.
     /// </summary>
     [RequireComponent(typeof(PlayerInput))]
     public class InputManager : MonoBehaviour
     {
-        public static PlayerInput PlayerInput;
-
-        public static Vector2 Movement;
+        public static InputManager Instance { get; private set; }
+        public PlayerInput PlayerInput { get; private set; }
+        public Vector2 Movement { get; private set; }
 
         private InputAction _moveAction;
 
-        //Получаем компоненты отвечающие за движение
+        // Ensures that the instance is set and that the GameObject is not destroyed on scene load
         private void Awake()
         {
-            PlayerInput
-            PlayerInput = GetComponent<PlayerInput>();
-            _moveAction = PlayerInput.actions["Move"];
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            InitializeInput();
         }
 
-        //Считываем значения для движения
+        private void InitializeInput()
+        {
+            PlayerInput = GetComponent<PlayerInput>();
+            _moveAction = PlayerInput.actions["Move"];
+            _moveAction.Enable();
+        }
+
+        // Enable and disable the move action
+        private void OnEnable()
+        {
+            _moveAction?.Enable();
+        }
+
+        private void OnDisable()
+        {
+            _moveAction?.Disable();
+        }
+
+        // Reads the movement input value
         private void Update()
         {
-            Movement = _moveAction.ReadValue<Vector2>();
+            if (_moveAction != null)
+                Movement = _moveAction.ReadValue<Vector2>();
         }
     }
 }
-
