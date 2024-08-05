@@ -15,14 +15,14 @@ public class TimeController : MonoBehaviour
     {
         Instance = this;
     }
-    void Start()
+    private void Start()
     {
         _bestTime = PlayerPrefs.GetFloat("BestTime", float.MaxValue);
         ResetTimer();
         StartTimer();
     }
 
-    void Update()
+    private void Update()
     {
         if (_isGameRunning)
         {
@@ -30,7 +30,7 @@ public class TimeController : MonoBehaviour
         }
     }
 
-    public void StartTimer()
+    private void StartTimer()
     {
         _isGameRunning = true;
     }
@@ -46,7 +46,7 @@ public class TimeController : MonoBehaviour
         }
     }
 
-    public void ResetTimer()
+    private void ResetTimer()
     {
         _currentTime = 0f;
         _isGameRunning = false;
